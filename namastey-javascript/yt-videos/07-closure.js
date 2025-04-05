@@ -84,3 +84,35 @@ console.log("07 - closures");
 // z();
 
 // Output: 10 25; Because 2 closures will be formed, one of (x) and one of (z) for y(); 
+
+/* 
+    -------    IMPORTANT EG for CLOSURES - let and const    ------
+*/
+
+// Eg: 5
+
+// function z() {
+//     let b = 25;
+//     function x() {
+//         let a = 10;
+//         function y() {
+//             console.log(a, b);
+//         }
+//         y();
+//     }
+//     x();
+// }
+// z();
+// Same results with let also.
+
+
+// {
+//     let b = 25;
+//     {
+//         let a = 10;
+//         {
+//             console.log(a, b);
+//         }
+//     }
+// }
+// Same results 
