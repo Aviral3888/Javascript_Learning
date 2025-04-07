@@ -87,4 +87,37 @@ function x() {
 
 x();
 
-// Everytime this interval() is called, a new copy of i is created because of this closed function, a closure is formed, and each time interval runs, it points to the new closure which will have different values of i
+// Everytime this interval() is called, a new copy of i is created because of this closed function, a closure is formed, and each time interval runs, it points to the new closure which will have different values of i;
+
+
+// NOTE: 
+// Closure Example
+// function outer() {
+//     var a = 10;
+//     function inner() {
+//         console.log(a);
+//     }
+//     return inner;
+// }
+
+// outer()();
+
+/*
+This is a closure:
+A closure happens when an inner function "remembers" variables from its outer (enclosing) function even after the outer function has finished executing.
+
+✅ Yes, this is a textbook example of a closure.
+*/
+
+//Not Closure example
+// function outer() {
+//     var a = 10;
+//     function inner() {
+//         console.log(a);
+//     }
+//     return inner();
+// }
+
+// outer();
+
+// Technically, this can be a closure, but cannot be used as a closure example, because it doesn't return the function, rather it returns the value
