@@ -1,5 +1,6 @@
 console.log("07.1 - Closures and setTimeouts examples");
 
+
 // Normal SetTimeout Example
 
 // function x(sec) {

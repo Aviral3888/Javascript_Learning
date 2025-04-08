@@ -1,5 +1,16 @@
 console.log("07 - closures");
 
+/*
+
+1. An inner function can be directly called using two parenthesis ()().
+2. Even parameters can be passed this way (Remember that the function needs to be returned to do this)
+3. Closures can also be used for data hiding and encapsulation. So other code cannot access this value.
+4. Unused variables are automatically deleted in High Level Programming language by garbage collector. Closures allocate a lot of memory which cannot be deleted so this acts as a disadvantage.
+5. Some browsers now have smart garbage collectors that automatically deletes variables that are not used outside closures.
+
+*/
+
+
 // Eg: 1
 
 // function x() {

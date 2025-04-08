@@ -96,3 +96,29 @@ Question 4: What if there is a variable in global scope with a conflicting name
 // counter1(); // 3
 
 // Here: the count variable will not be accessible outside the counter(), but calling counter() will increment the counter;
+
+
+/*
+    DATA Hiding and Encapsulation [Data privacy using closures]
+    Using Constructor Functions
+*/
+
+// Eg 6:
+
+// function Counter() {
+//     var count = 0;
+//     this.incrementCounter = function (){
+//         count++;
+//         console.log(count);
+//     }
+//     this.decrementCounter = function (){
+//         count--;
+//         console.log(count);
+//     }
+// };
+
+// var counter1 =  new Counter(); // using new keyword we create this connstructor function.
+// counter1.incrementCounter();
+// counter1.incrementCounter();
+// counter1.decrementCounter();
+
