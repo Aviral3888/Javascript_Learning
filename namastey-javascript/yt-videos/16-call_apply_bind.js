@@ -15,6 +15,7 @@ The call method is used to call a function with a given this value and arguments
 
 The call method is useful when you want to execute a function with a different this value and a fixed number of arguments. You can also use the call method to borrow methods from other objects or classes.
 
+call() can be used to invoke (call) a method with an owner object as an argument (parameter). With call(), an object can use a method belonging to another object.
 */
 
 /*
