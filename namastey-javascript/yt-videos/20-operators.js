@@ -1,6 +1,10 @@
 console.log("20 - Operators in js.")
 
 /*
+-----------------------------       Google Docs Notes       ---------------------------------
+*/
+
+/*
 
 Operators
 Arithmetic Operators
