@@ -287,3 +287,52 @@ Not Enumerable	Not shown in for...in, Object.keys(), etc.
 Built-in Uses	Symbol.iterator, Symbol.toStringTag, etc.
 
 */
+
+
+/*
+
+// -------------------			JS - Type Conversion		----------------------
+
+JS variables can be converted to a new variable and another data type.
+By the use of a JavaScript function
+global method String() & primitive data type’s method toString() can convert any number, boolean & date to a string.
+global method Number() can convert strings, booleans & dates to numbers. Empty strings convert to 0. Anything else converts to NaN (Not a Number).
+unary + operator can be used to convert a variable to a number. Ex.
+var y = "5";	// y is a string
+var x = + y;	// x is a number
+Automatically by JavaScript itself
+When JavaScript tries to operate on a "wrong" data type, it will try to convert the value to a "right" type. Ex.
+5 + null	// returns 5 because null is converted to 0
+"5" + null	// returns "5null" because null is converted to "null"
+"5" + 2	// returns "52" because 2 is converted to "2"
+"5" - 2	// returns 3 because "5" is converted to 5
+"5" * "2"	// returns 10 because "5" and "2" are converted to 5 and 2
+
+
+
+Original Value         Converted to Number    Converted to String     Converted to Boolean
+--------------------------------------------------------------------------------------------
+false                  0                      "false"                 false
+true                   1                      "true"                  true
+0                      0                      "0"                     false
+1                      1                      "1"                     true
+"0"                    0                      "0"                     true
+"000"                  0                      "000"                   true
+"1"                    1                      "1"                     true
+NaN                    NaN                    "NaN"                   false
+Infinity               Infinity               "Infinity"              true
+-Infinity              -Infinity              "-Infinity"             true
+""                     0                      ""                      false
+"20"                   20                     "20"                    true
+"twenty"               NaN                    "twenty"                true
+[]                     0                      ""                      true
+[20]                   20                     "20"                    true
+[10, 20]               NaN                    "10,20"                 true
+["twenty"]             NaN                    "twenty"                true
+["ten", "twenty"]      NaN                    "ten,twenty"            true
+function(){}           NaN                    "function(){}"          true
+{}                     NaN                    "[object Object]"       true
+null                   0                      "null"                  false
+undefined              NaN                    "undefined"             false
+
+*/
