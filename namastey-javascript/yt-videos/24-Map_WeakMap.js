@@ -140,6 +140,7 @@ let nameObj = {"name": "Aviral"}
 wm.set({}, "Empty Object");
 wm.set(nameObj, "Named Object");
 // console.log(wm);
+// console.log(wm.get(nameObj)); // works fine
 // console.log(wm.delete({})); // false
 // console.log(wm.delete(nameObj)); // true
 
