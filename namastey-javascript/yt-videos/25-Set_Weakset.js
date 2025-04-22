@@ -1,5 +1,8 @@
 console.log("24 - Set + Weakset");
 
+/*      -----------         SET        ----------      */
+
+
 // Creating a set
 const mySet = new Set();
 console.log(mySet);
@@ -15,7 +18,7 @@ mySet.add(add);
 console.log("Set:", mySet);
 
 // Can also be initialized using Set Constructor
-const mySet2 = new Set([1, "name", false, {a: "1"}, ()=> {}]);
+const mySet2 = new Set([1, "name", false, { a: "1" }, () => { }]);
 // console.log("Constructor set: ", mySet2);
 
 // Size of Set
@@ -53,10 +56,29 @@ mySet.forEach((item) => {
 
 
 /*      -----------         Remove duplicates from an array        ----------      */
-
+/*
 let testArray = [1,2,3,4,1,2,99];
 console.log(testArray); // (7) [1, 2, 3, 4, 1, 2, 99]
 const testSet = new Set(testArray);
 console.log(testSet); // Set(5) {1, 2, 3, 4, 99}
 testArray = Array.from(testSet);
 console.log(testArray); //(5) [1, 2, 3, 4, 99]
+*/
+
+
+
+/*      -----------         WEAKSET        ----------      */
+
+const ws = new WeakSet();
+// console.log(ws);
+// ws.add("1"); //Uncaught TypeError: Invalid value used in weak set
+let nameObj = {"name": "Aviral"}
+ws.add({});
+ws.add(nameObj);
+ws.add(["1", 2, {}]);
+ws.add(() => {})
+// console.log(ws);
+
+// console.log(ws.delete(nameObj)) // true
+
+// console.log(ws.has(nameObj)); // true

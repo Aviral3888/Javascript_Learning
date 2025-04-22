@@ -1,5 +1,8 @@
 console.log("24 - Map + Weakmap");
 
+/*      -----------         MAP        ----------      */
+
+
 // Maps in Javascript are same as Objects, Additionally we can use any type of keys and values.
 
 // Creating a Map
@@ -127,3 +130,17 @@ const keysArr = Array.from(myMap.keys());
 const valuesArr = Array.from(myMap.values());
 // console.log(valuesArr);
 
+
+
+/*      -----------         WEAKMAP        ----------      */
+
+let wm = new WeakMap();
+// console.log(wm); 
+let nameObj = {"name": "Aviral"}
+wm.set({}, "Empty Object");
+wm.set(nameObj, "Named Object");
+// console.log(wm);
+// console.log(wm.delete({})); // false
+// console.log(wm.delete(nameObj)); // true
+
+// console.log(wm.has(nameObj)) // true 
