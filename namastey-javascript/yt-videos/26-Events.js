@@ -52,3 +52,10 @@ document.querySelector('#anchor_Events').addEventListener("click", (e) => {
 /*      ---------------       Event Capturing   [T -> B]       ---------------       */
 
 // Event Capturing defines the order of event from parent to child. It can be achieved by passing the third argument inside the addEventListener() "true".
+
+
+/*      ---------------       Event Delegation        ---------------       */
+
+// Event delegation is a pattern where you attach a single event listener to a parent element (in your case, the <ul id="list">), and handle events that occur on its child elements (the <li>s) by checking the e.target.
+
+// Instead of attaching a separate listener to each <li>, you delegate the responsibility to the parent. This is especially powerful for dynamic lists, where <li> items might be added or removed later.

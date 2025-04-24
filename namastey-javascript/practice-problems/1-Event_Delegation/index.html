@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: rgb(50, 50, 50);
+            color: white;
+        }
+
+        li {
+            border: 2px solid white;
+            border-radius: 15px;
+            margin: 10px;
+            padding: 10px 15px;
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <h4>Understanding Event Delegation - Chai aur Code</h4>
+    <a href="https://youtu.be/_ALUMTa8BAE?si=KKuJcD9QCN4-6-vp" target="_blank" style="color: rgb(173, 169, 160);">Link</a>
+
+    <div>
+        <ul id="list">
+            <li id="Monday" class="list-items">Monday</li>
+            <li id="Tuesday" class="list-items">Tuesday</li>
+            <li id="Wednesday" class="list-items">Wednesday</li>
+            <li id="Thursday" class="list-items">Thursday</li>
+            <li id="Friday" class="list-items">Friday</li>
+            <li id="Saturday" class="list-items">Saturday</li>
+            <li id="Sunday" class="list-items">Sunday</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    console.log("Events ->");
+
+    // This is Event Spillover
+    document.querySelector('#list').addEventListener('click', (e) => {
+        // console.log(e.target); // Target a single node
+        // console.log(e.target.parentNode);  // 
+        // const removeIt = e.target.parentNode;
+        // removeIt.remove(); // This will remove the complete ul
+        // removeIt.parentNode.removeChild(removeIt); // This will also remove the complete ul
+
+        // Working now
+        if(e.target.tagName == "LI") {
+            e.target.remove();
+        }
+    }, false)
+</script>
+</html>
