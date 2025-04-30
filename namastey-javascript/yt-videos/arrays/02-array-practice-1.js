@@ -28,3 +28,28 @@
 //     index++;
 // }
 // console.log(prices);
+
+
+/* -------------          Q3        ----------- */ 
+/*
+Create an array to store companies = "Meta", "Apple", "Adobe", "Netflix", "Google"
+a) Remove the first company from the array 
+b) Remove Adobe and add Microsoft in its place
+c) Add Uber at the end
+*/
+
+// let companies = ["Meta", "Apple", "Adobe", "Netflix", "Google"];
+// console.log("initial:", companies);
+
+// // a)
+// companies.shift();
+// console.log("after a:", companies);
+
+// // b)
+// companies.splice(1, 1, "Microsoft");
+// console.log("after b:", companies);
+
+// // c)
+// // companies.push("Uber");
+// companies.splice(companies.length, 0, "Uber");
+// console.log("after c:", companies);
