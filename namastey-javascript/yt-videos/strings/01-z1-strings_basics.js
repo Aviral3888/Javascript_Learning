@@ -64,3 +64,18 @@ let str = "Sample String"
 // console.log(str.replaceAll('S', 's'));                           // sample string
 
 
+
+
+
+// -------- Conversion to String
+
+// For Primitive Data Types
+
+// console.log(String(1));                                          // '1'   
+// console.log(String(true));                                       // 'true'
+// console.log(String(undefined));                                  // 'undefiend'
+
+
+// For Objects
+// console.log(JSON.stringify({name: "Amit"}));                     // {"name":"Amit"} String
+// console.log(JSON.parse('{"name":"Amit"}'));                     // { name: 'Amit' } Object

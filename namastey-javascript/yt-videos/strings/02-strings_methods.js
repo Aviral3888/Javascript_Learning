@@ -110,6 +110,23 @@ console.log(sportsName.includes("z"));      // false
 
 
 
+
 /* -------       split()        ------- */
 let splitName1 = "one-two-three-four";
-console.log(splitName1.split('-'));         // ['one', 'two', 'three', 'four']
+// console.log(splitName1.split('-'));         // ['one', 'two', 'three', 'four']
+
+
+
+
+/* -------       padStart and padEnd()        ------- */
+// console.log("5".padStart(3, "0"));           // "005"
+// console.log("5".padStart(3, "1"));           // "115"
+
+// console.log("5".padEnd(3, "0"));             // "500"
+// console.log("5".padEnd(4, "a"));             // "5aaa"
+
+
+
+
+/* -------       repeat()        ------- */
+// console.log("string".repeat(4));             // stringstringstringstring
