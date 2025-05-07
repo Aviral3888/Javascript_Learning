@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- case insensitive -->
+<html>
+
+<head>
+    <!-- container for meta data -->
+    <meta...>
+
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            table {
+                width: 70%;
+                border-spacing: 20px;
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                /* border-collapse: collapse; */
+                text-align: center;
+            }
+
+            th,
+            td {
+                background-color: rgb(248, 215, 153);
+                padding: 15px;
+            }
+
+            td {
+                padding: 8px;
+            }
+
+            .main-heading {
+                width: 50%;
+            }
+
+            tr:hover {
+                background-color: grey;
+                color: grey;
+            }
+        </style>
+        <script></script>
+</head>
+
+<body>
+
+    <!-- Headings: Improves SEO and readability -->
+    <h1 title="heading1">... <h6>...</h6>
+    </h1>
+
+    <!-- Text Formatting tags -->
+    <p>This is <b>Bold tag</b> vs <strong>Strong tag</strong></p>
+    <p>This is <i>Italics tag</i> vs <em>Emphasize tag</em></p>
+    <p>This is <mark>Mark tag</mark></p>
+    <p>This is <del>Deleted tag</del></p>
+    <p>This is <ins>Inserted tag</ins></p>
+    <p>This is <small>Small</small> tag</p>
+    <p>This is <sub>subscript</sub> tag</p>
+    <p>This is <sup>superscript</sup> tag</p>
+
+    <!-- Bookmark using a tag -->
+    <div id="section"> Creating a Bookmark</div>
+    ...
+    <a href="#section" title="Bookmark">Click to go to bookmark</a>
+
+    <hr>
+
+    <!-- Description list -->
+    <dl>
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </dl>
+
+    <hr>
+
+    <!-- Image Tags -->
+    <img src="" alt="" usemap="#img-map">
+    <map name="img-map">
+        <area shape="poly" coords="" href="" alt="">
+        <area shape="rect" coords="tl-x, tl-y, br-x, br-y" href="" alt="">
+        <!-- tl = top left | br = bottom right -->
+        <area shape="circle" coords="c-x, c-y, r" href="" alt="">
+        <!-- c-x = center x-axis, c-y = center y-axis | r = radius-->
+    </map>
+
+    <!-- Table -->
+    <table>
+        <caption><strong>Table Caption</strong></caption>
+        <tr>
+            <th>Padding: 15px</th>
+            <th class="main-heading">Head 2</th>
+            <th>Head 3</th>
+        </tr>
+        <tr>
+            <td>Padding: 8px</td>
+            <td>Data Row 1</td>
+            <td>Border spacing: 20px</td>
+        </tr>
+        <tr>
+            <td>Data Row 2</td>
+            <td colspan="2">Col span 2</td>
+        </tr>
+        <tr>
+            <td>Data Row 3</td>
+            <td rowspan="2">Row span 2</td>
+            <td>Data Row 3</td>
+        </tr>
+        <tr>
+            <td>Data Row 4</td>
+            <td>Data Row 4</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

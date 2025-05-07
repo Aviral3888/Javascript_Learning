@@ -38,6 +38,8 @@ console.log("Obj:", obj1);                  // { "0": 10, "1": 3, "2": 26, "3": 
 */
 
 
+
+
 /*       ---------------        Array.prototype.filter()         --------------       */
 
 /*
@@ -51,6 +53,8 @@ let filteredArr = arr1.filter( (val) => {
 console.log("Filtered Arr:", filteredArr);   // [12, 62, 8, 0]
 
 */
+
+
 
 
 /*       ---------------        Array.prototype.reduce()         --------------       */
@@ -88,3 +92,55 @@ const flattenArr = nested.reduce((acc, curr, index, arr) => {
 console.log("Flatten:", flattenArr);
 
 */
+
+
+
+
+
+/*       ---------------        Array.prototype.some()         --------------       */
+
+/*
+// Eg: 1 Check if any number is divisible by 2 and 5 both
+
+let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let valid = arr1.some((val, index, arr) => {
+    return (val % 2 === 0 && val % 5 === 0);
+});
+console.log("Valid:", valid);
+*/
+
+
+
+
+
+/*       ---------------        Array.prototype.every()         --------------       */
+
+/*
+// Eg: 1 Return every number divisible by 2 or 5 
+
+let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let newArr = arr1.every((val, index, arr) => {
+    return (val % 2 == 0 || val % 5 == 0 || val > 0)
+});
+console.log("Valid:", newArr);
+
+*/
+
+
+
+
+/*       ---------------        Array.prototype.fill()         --------------       */
+// let arr3 = [1,2,4,5,6,8];
+// arr3.fill(0);                                  //  [0, 0, 0, 0, 0, 0]
+// arr3.fill(0, 2);                               //  [1, 2, 0, 0, 0, 0]
+// arr3.fill(0, 2, 4);                            //  [1, 2, 0, 0, 6, 8]
+// console.log(arr3);
+
+
+
+
+/*       ---------------        Array.prototype.reverse()         --------------       */
+// let arr4 = [1,2,3,4,5,6,7,8,9];
+// console.log(arr4);
+// arr4.reverse();
+// console.log(arr4);
