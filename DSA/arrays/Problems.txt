@@ -4,3 +4,5 @@ Array Problems:
 [I] EASY:
 
 1. Second Largest number
+    [ Brute Force - Js Methods (sort, set, array) - TC: O(nlog n) ]
+    [ Optimized - Array with Linear approach - TC: O(n) ]
