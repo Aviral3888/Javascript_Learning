@@ -65,17 +65,34 @@ function rotateByK_2(arr, k) {
 
 // Solution 3: Without using Js inbuilt methods
 
+function reverseArr(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    let reversedArray = [];
+    for (let i =0; i<arr.length / 2; i++) {
+        reversedArray[i] = arr[end];
+        reversedArray[end] = arr[i];
+        end--; 
+    }
+    return reversedArray;
+}
 
 function rotateByK_3(arr, k) {
     let size = arr.length;
     if (size < k) {
         k = k % size
     }
+    let reverseArr = this.reverseArr(arr);
+    // console.log(reverseArr);
+    let rotatedArr = [...this.reverseArr(reverseArr.slice(0, k)), ...this.reverseArr(reverseArr.slice(k))];
+    // console.log(rotatedArr);
+    return rotatedArr;
 }
 
-console.log(rotateByK_3([1, 2, 3, 4, 5, 6, 7], 1));
+console.log(rotateByK_3([-1,-100,3,99], 2 ));
 
 
 // [1,2,3,4,5,6,7] -> k
+// [7,6,5,4,3,2,1] -> after reverse
 
 
