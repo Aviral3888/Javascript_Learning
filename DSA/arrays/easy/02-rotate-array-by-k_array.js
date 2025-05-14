@@ -65,34 +65,43 @@ function rotateByK_2(arr, k) {
 
 // Solution 3: Without using Js inbuilt methods
 
-function reverseArr(arr) {
-    let start = 0;
-    let end = arr.length - 1;
-    let reversedArray = [];
-    for (let i =0; i<arr.length / 2; i++) {
-        reversedArray[i] = arr[end];
-        reversedArray[end] = arr[i];
-        end--; 
+function reverseArr(arr, start, end) {
+    while(start < end) {
+        let temp = arr[start];
+        arr[start++] = arr[end];
+        arr[end--] = temp;
     }
-    return reversedArray;
+    return arr;
 }
+
+/*
+[1,2,3,4,5,6,7], 0, 6
+0, 6, true, temp = 1, [7, ... , 1]
+1, 5, true, temp = 2, [7,6, ... , 2,1]
+2, 4, true, temp = 3, [7,6,5,4,3,2,1]
+3, 3, false
+*/
 
 function rotateByK_3(arr, k) {
-    let size = arr.length;
-    if (size < k) {
-        k = k % size
-    }
-    let reverseArr = this.reverseArr(arr);
-    // console.log(reverseArr);
-    let rotatedArr = [...this.reverseArr(reverseArr.slice(0, k)), ...this.reverseArr(reverseArr.slice(k))];
-    // console.log(rotatedArr);
-    return rotatedArr;
+    if (k >= arr.length) k = k % arr.length;
+    console.log(k);
+    if (k == 0) return arr;
+
+    
+    reverseArr(arr, 0, arr.length-1);           // O(n)
+    reverseArr(arr, 0, k-1);                    // O(k)
+    return reverseArr(arr, k, arr.length -1);   // O(n-k)
 }
 
-console.log(rotateByK_3([-1,-100,3,99], 2 ));
+console.log(rotateByK_3([1,2,3,4,5,6,7], 3 ));
 
+// Time Complexity - O(n)
+// Space Complexity - O(1)
 
-// [1,2,3,4,5,6,7] -> k
-// [7,6,5,4,3,2,1] -> after reverse
+// [1,2,3,4,5,6,7] -> 3
+// reverse - [7,6,5,4,3,2,1]
+// break first k elements and reverse: [5,6,7,4,3,2,1]
+// reverse the remaining elements:  [5,6,7,1,2,3,4]
+
 
 
