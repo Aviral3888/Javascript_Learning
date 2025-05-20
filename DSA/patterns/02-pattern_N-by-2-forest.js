@@ -21,7 +21,7 @@ function printPattern(num) {
     for (let row = 1; row <= num; row++) {
         let line = "";
         for (let col = 1; col <= row; col++) {
-            line+= "* ";
+            line += "* ";
         }
         console.log(line);
     }

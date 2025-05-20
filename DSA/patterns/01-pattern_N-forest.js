@@ -18,7 +18,7 @@ function printPattern(num) {
     for (let row = 0; row < num; row++) {
         let line = "";
         for (let col = 0; col < num; col++) {
-            line+= "* ";
+            line += "* ";
         }
         console.log(line);
     }

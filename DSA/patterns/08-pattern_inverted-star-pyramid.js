@@ -3,55 +3,45 @@ Problem statement
 
 Input Format: N = 3
 Result: 
-  *  
- *** 
 *****  
-
+ ***
+  *
+   
 Input Format: N = 6
-
-     *     
-    ***    
-   *****   
-  *******  
- ********* 
+Result:     
 ***********
-* * *
+ *********
+  *******
+   ***** 
+    ***    
+     *
 
 */
 
 function printPattern(num) {
   for (let row = 1; row <= num; row++) {
     let line = "";
-    for (let col = 0; col < (num - row); col++) {
+    for (let col = 0; col < (row - 1); col++) {
       line += "  ";
     }
-    for (let col = 0; col < (row * 2 - 1); col++) {
+    for (let col = 0; col < (num * 2 - (row * 2 - 1)); col++) {
       line += "* ";
     }
     console.log(line);
   }
 }
 
-printPattern(6)
+printPattern(3)
 
 /*
-  *  
- *** 
+
 *****  
-
-_ _
-_
-
-+ 
-
-    *
-  * *
-* * *
-
-+
+ ***
+  *
+=
 
 _ 
-*
-* * 
-
+_ _ 
++
+* pattern
 */
