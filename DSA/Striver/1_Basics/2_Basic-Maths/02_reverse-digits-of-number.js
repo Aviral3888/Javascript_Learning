@@ -19,15 +19,25 @@ Output: 9877
 Explanation: The reverse of number 7789 is 9877.
 */
 
-function reverseDigits(num) {
+var reverse = function (x) {
     let reverseNum = 0;
-    while(num >= 1) {
-        let lastDigit = num % 10;
-        num = Math.floor(num/10);
+    let sign = (x < 0) ? -1 : 1;
+    x = Math.abs(x);
+    while (x != 0) {
+        let lastDigit = x % 10;
+        x = Math.floor(x / 10);
         reverseNum = (reverseNum * 10) + lastDigit;
-    } 
-    return reverseNum
-}
+    }
+    console.log(reverseNum);
+    let exp = (2 ** 31) - 1;
+    console.log(exp);
+    if ((reverseNum > 2 ** 31 - 1) || reverseNum < -(2 ** 31)) {
+        return 0;
+    }
+    // if (reverseNum < -(2 ** 31) || reverseNum > 2 ** 31 - 1) return 0;
+    reverseNum *= sign;
+    return reverseNum;
+};
 
-let num = 12345798
-console.log(reverseDigits(num));
+let num = -2147483648
+console.log(reverse(num));
