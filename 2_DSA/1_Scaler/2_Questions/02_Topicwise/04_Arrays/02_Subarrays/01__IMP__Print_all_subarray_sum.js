@@ -23,6 +23,8 @@ function printAllSubarraysSum1(arr) {
 
 // console.log(printAllSubarraysSum1(arr_1));
 
+
+
 // Solution 2 : Carry Forward Technique
 // Time Complexity -> O(N^2) 
 
@@ -42,4 +44,29 @@ function printAllSubarraysSum2(arr) {
     return sum;
 }
 
-console.log(printAllSubarraysSum2(arr_2));
+// console.log(printAllSubarraysSum2(arr_2));
+
+
+
+// Solution 3: Contribution of every element technique
+/*
+This approach mixes with the concept of 
+How many subarrays will contain ith element.
+
+*/
+
+let arr_3 = [3, -2, 4, -1, 2, 6]
+
+function printAllSubarraysSum3(arr) {
+    let sum = 0;
+    let N = arr.length;
+    for (let i = 0; i < N; i++) {
+        let total_occurance = (i + 1) * (N - i);
+        let each_element_contribution = arr[i] * total_occurance;
+        sum += each_element_contribution;
+    }
+
+    return sum;
+}
+
+console.log(printAllSubarraysSum3(arr_3))
