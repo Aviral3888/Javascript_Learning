@@ -11,6 +11,7 @@ k = 3
 left    = 0 -> 3    == [3, -2, 4, -1]   count = 4 (k + 1)
 right   = 3 -> N-1  == [-1, 2, 6]       count = 3 (N - k)
 
+
 */
 
 function getTotalSubarraysWithElementK(arr, k) {
