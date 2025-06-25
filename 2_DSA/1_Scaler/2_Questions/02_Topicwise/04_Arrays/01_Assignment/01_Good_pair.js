@@ -102,4 +102,47 @@ function findGoodPair_2(A, B) {
     return 0;
 }
 
-console.log(findGoodPair_2(A, B))
+// console.log(findGoodPair_2(A, B))
+
+
+
+// Solution 3 - Using Object is Js
+
+// T.C = O(N) but S.C also O(N);
+
+// let A = [1, 2, 3, 4]
+// let B = 7
+
+function findGoodPair_3(A, B) {
+
+    let map = {};
+    for (let i = 0; i < A.length; i++) {
+        let req = B - A[i];
+        if (map[req]) { return 1 }
+        map[A[i]] = 1;
+    }
+    return 0;
+}
+
+// console.log(findGoodPair_3([2, 2], 4))
+// console.log(findGoodPair_3([1, 2, 3, 4], B))
+
+
+
+
+// Solution 4 - Using Map() is Js
+
+
+function findGoodPair_4(A, B) {
+
+    let map = new Map();
+
+    for (let i = 0; i < A.length; i++) {
+        let req = B - A[i];
+        if (map.has(req)) { return 1 }
+        map.set(A[i], 1);
+    }
+    return 0;
+}
+
+console.log(findGoodPair_4([1, 2, 3, 4], 7))
