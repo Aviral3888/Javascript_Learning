@@ -40,7 +40,7 @@ function nobleInteger(arr) {
     let N = arr.length;
     arr = arr.sort((a, b) => a - b);
     for (let i = 0; i < N; i++) {
-        if (arr[i] !== arr[i + 1] || arr[i] != 0) {
+        if (arr[i] !== arr[i + 1]) {
             if (arr[i] == (N - 1) - i) {
                 console.log(arr[i]);
                 return 1
