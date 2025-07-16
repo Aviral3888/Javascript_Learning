@@ -16,7 +16,7 @@ dns.lookup("google.com", (error, address, family) => {
 
 
 // FS
-fs.readFile('./02_thread_pool_fs_check.txt', (error, data) => {
+fs.readFile('./02_thread_pool_fs_check.txt', 'utf-8', (error, data) => {
     if (error) {
         console.log("FS Error:", error)
     }
