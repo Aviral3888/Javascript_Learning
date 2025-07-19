@@ -9,4 +9,3 @@ emitter.on("messageLogged", (args) => {
 });
 
 log("This is a log message");
-
