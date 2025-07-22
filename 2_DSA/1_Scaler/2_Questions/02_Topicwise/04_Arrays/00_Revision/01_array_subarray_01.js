@@ -30,7 +30,7 @@ console.log(findElementsWithOneValueGreaterThenThem(arr_1));
 
 
 // ----------------------------------------------------------------------------------------------------
-
+//                          REVERSE ARRAY 
 // ----------------------------------------------------------------------------------------------------
 
 
@@ -88,7 +88,7 @@ console.log(printAllSubarrays(arr_1))
 
 
 // ----------------------------------------------------------------------------------------------------
-
+//                          PRINT ALL SUBARRAY
 // ----------------------------------------------------------------------------------------------------
 
 
@@ -120,9 +120,8 @@ console.log(printAllSubarraysSum(arr_1))
 
 
 // ----------------------------------------------------------------------------------------------------
-
+//                          REVERSE SUBARRAY
 // ----------------------------------------------------------------------------------------------------
-
 
 
 // Problem 5:
@@ -147,4 +146,62 @@ function reverseSubArray(arr, a, b) {
 }
 
 console.log(reverseSubArray(arr_2, a, b))
+*/
+
+
+
+// ----------------------------------------------------------------------------------------------------
+//                          GOOD PAIR  ||  2 SUM
+// ----------------------------------------------------------------------------------------------------
+
+// Problem 6:
+// Good Pair or 2 Sum
+// Given an array A and an integer B. A pair(i, j) in the array is a good pair if i != j and (A[i] + A[j] == B). Check if any good pair exist or not.
+
+
+
+/*
+let A = [1, 2, 3, 4, -2, 3, 40, 20, 1]
+let B = 38
+
+function checkGoodPair(arr, k) {
+    let indices = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i; j < arr.length; j++) {
+            if (i == j) {
+                continue;
+            }
+            else if (arr[i] + arr[j] == k) {
+                indices = [arr[i], arr[j]];
+            }
+        }
+    }
+    return (indices.length > 0) ? indices : false
+}
+
+console.log(checkGoodPair(A, B));
+*/
+
+/* 
+let A = [5, 11, 17, 8, 2]
+let B = 19
+
+function getGoodPair(arr, k) {
+    let map = new Map();
+    let indices = [];
+    for (let i = 0; i< arr.length; i++) {
+        let req = k - arr[i];
+        if (map.has(req)) {
+            indices = [map.get(req), i];
+            break;
+        }
+        else {
+            map.set(arr[i], i);
+            console.log(map);
+        }
+    }
+    return (indices.length > 0) ? indices : false;
+}
+
+console.log(getGoodPair(A, B))
 */
