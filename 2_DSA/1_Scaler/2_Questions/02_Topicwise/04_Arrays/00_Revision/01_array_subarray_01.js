@@ -214,11 +214,11 @@ console.log(getGoodPair(A, B))
 // Problem 7:
 // Rotate an array by K elements:
 
-let arr = [3, -2, 1, 4, 6, 9, 8];
-let k = 3;
+// let arr = [3, -2, 1, 4, 6, 9, 8];
+// let k = 3;
 
 // ans = [6, 9, 8, 3, -2, 1, 4]
-
+/*
 function reverse(arr, start, end) {
     while (start < end) {
         arr[start] = arr[start] ^ arr[end];
@@ -232,7 +232,7 @@ function reverse(arr, start, end) {
 function rotateByK(arr, k) {
     let N = arr.length;
     if (arr.length < 2) { return arr };
-
+    if (k > N) { k = k % N }
     reverse(arr, 0, N - 1);
     reverse(arr, 0, k - 1);
     reverse(arr, k, N - 1);
@@ -240,6 +240,8 @@ function rotateByK(arr, k) {
 }
 
 console.log(rotateByK(arr, k));
+*/
+
 
 
 // Time Complexity - O(n)
@@ -250,3 +252,56 @@ console.log(rotateByK(arr, k));
 // reverse - [7,6,5,4,3,2,1]
 // break first k elements and reverse: [5,6,7,4,3,2,1]
 // reverse the remaining elements:  [5,6,7,1,2,3,4]
+
+
+
+// ----------------------------------------------------------------------------------------------------
+//                          PRINT ALL SUBARRAY SUMs - CARRY FORWARD TECHNIQUE
+// ----------------------------------------------------------------------------------------------------
+
+// Problem 8: 
+// Print all subarray elements
+/*
+
+let arr_1 = [3, -2, 4, -1, 2, 6];
+
+function printAllSubarraysSum(arr) {
+    let N = arr.length;
+    let sum = 0;
+    for (let i = 0; i < N; i++) {
+        let sum1 = 0
+        for (let j = i; j < N; j++) {
+            sum1 = sum1 + arr[j];
+            sum = sum + sum1;
+            console.log(sum1); // all subarray sums
+        };
+        console.log(sum);
+    }
+    return sum;
+}
+
+console.log(printAllSubarraysSum(arr_1))
+*/
+
+// ----------------------------------------------------------------------------------------------------
+//                          PRINT START & END INDEX - OF ALL SUBARRAY WITH LEN K
+// ----------------------------------------------------------------------------------------------------
+
+// Problem 9: 
+// Print starting and ending index of all subarrays where len = k;
+// Solve
+
+let arr_1 = [3, 4, 2, -1, 6, 7, 8];
+let k = 3;
+
+function printStartAndEndIndexSubArrayK(arr, K) {
+    let N = arr.length;
+    let count = 0;
+    for (let i = 0; i <= N - K; i++) {
+        console.log(`[start, end] = [${i}, ${i + K - 1}]`)
+        count++;
+    }
+    return count;
+}
+
+console.log(printStartAndEndIndexSubArrayK(arr_1, k));
