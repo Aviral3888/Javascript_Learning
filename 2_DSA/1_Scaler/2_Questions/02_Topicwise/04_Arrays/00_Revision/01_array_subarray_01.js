@@ -283,6 +283,8 @@ function printAllSubarraysSum(arr) {
 console.log(printAllSubarraysSum(arr_1))
 */
 
+
+
 // ----------------------------------------------------------------------------------------------------
 //                          PRINT START & END INDEX - OF ALL SUBARRAY WITH LEN K
 // ----------------------------------------------------------------------------------------------------
@@ -290,7 +292,7 @@ console.log(printAllSubarraysSum(arr_1))
 // Problem 9: 
 // Print starting and ending index of all subarrays where len = k;
 // Solve
-
+/*
 let arr_1 = [3, 4, 2, -1, 6, 7, 8];
 let k = 3;
 
@@ -305,3 +307,32 @@ function printStartAndEndIndexSubArrayK(arr, K) {
 }
 
 console.log(printStartAndEndIndexSubArrayK(arr_1, k));
+*/
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+//                          MAX SUBARRAY SUM with len K
+// ----------------------------------------------------------------------------------------------------
+
+// Problem 10:
+/**/
+let arr_1 = [3, 1, -2, -1, 6, 7, 8];
+let k = 3;
+
+function findMaxSubArraySum(arr, K) {
+    let N = arr.length;
+    let max = -Infinity;
+    for (let i = 0; i <= N - K; i++) {
+        let sum = 0;
+        for (let j = i; j < i + K; j++) {
+            sum += arr[j];
+        }
+        if (max < sum) max = sum;
+    }
+    return max;
+}
+
+console.log(findMaxSubArraySum(arr_1, k));
+
