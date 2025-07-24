@@ -205,3 +205,48 @@ function getGoodPair(arr, k) {
 
 console.log(getGoodPair(A, B))
 */
+
+
+// ----------------------------------------------------------------------------------------------------
+//                          ROTATE AN ARRAY BY K
+// ----------------------------------------------------------------------------------------------------
+
+// Problem 7:
+// Rotate an array by K elements:
+
+let arr = [3, -2, 1, 4, 6, 9, 8];
+let k = 3;
+
+// ans = [6, 9, 8, 3, -2, 1, 4]
+
+function reverse(arr, start, end) {
+    while (start < end) {
+        arr[start] = arr[start] ^ arr[end];
+        arr[end] = arr[start] ^ arr[end];
+        arr[start] = arr[start] ^ arr[end];
+        start++;
+        end--;
+    }
+}
+
+function rotateByK(arr, k) {
+    let N = arr.length;
+    if (arr.length < 2) { return arr };
+
+    reverse(arr, 0, N - 1);
+    reverse(arr, 0, k - 1);
+    reverse(arr, k, N - 1);
+    return arr;
+}
+
+console.log(rotateByK(arr, k));
+
+
+// Time Complexity - O(n)
+// Space Complexity - O(1)
+
+// steps:
+// [1,2,3,4,5,6,7] -> 3
+// reverse - [7,6,5,4,3,2,1]
+// break first k elements and reverse: [5,6,7,4,3,2,1]
+// reverse the remaining elements:  [5,6,7,1,2,3,4]
