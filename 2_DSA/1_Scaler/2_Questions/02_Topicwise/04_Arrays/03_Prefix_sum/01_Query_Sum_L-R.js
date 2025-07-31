@@ -11,8 +11,6 @@ Q = 5;
 */
 
 
-// Solution : BRUTE FORCE
-
 let arr = [-3, 6, 2, 4, 5, 2, 8, -9, 3, 1];
 let queries = [
     [1, 3],
@@ -22,6 +20,36 @@ let queries = [
     [7, 7]
 ];
 
+
+/*
+            SOLUTION 2 : PREFIX ARRAY SUM 
+*/
+
+/**/
+function getQuerySum(arr, queries) {
+    let PF = [arr[0]]; 
+    for (let i = 1; i < arr.length; i++) {
+        PF[i] = PF[i-1] + arr[i];
+    }
+
+    let ans = [];
+    for (let [L, R] of queries) {
+        let querySum = PF[R] - PF[L] + arr[L]; 
+        ans.push(querySum);
+    }
+
+    return ans;
+}
+
+console.log(getQuerySum(arr, queries));
+
+
+
+
+/*
+            SOLUTION 1 : BRUTE FORCE
+*/
+/*
 function getQuerySum(arr, queries) {
     let querySum = [];
 
@@ -37,4 +65,4 @@ function getQuerySum(arr, queries) {
 }
 
 console.log(getQuerySum(arr, queries));
-
+*/
