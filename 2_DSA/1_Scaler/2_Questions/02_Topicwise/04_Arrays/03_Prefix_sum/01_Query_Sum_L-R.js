@@ -11,7 +11,7 @@ Q = 5;
 */
 
 
-// Solution :
+// Solution : BRUTE FORCE
 
 let arr = [-3, 6, 2, 4, 5, 2, 8, -9, 3, 1];
 let queries = [
@@ -22,23 +22,19 @@ let queries = [
     [7, 7]
 ];
 
-function getSum_L_R(arr, queries) {
-    let PF = [];
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum = sum + arr[i];
-        PF[i] = sum;
+function getQuerySum(arr, queries) {
+    let querySum = [];
+
+    for (let [L, R] of queries) {
+        let sum = 0;
+        for (let i = L; i<=R; i++) {
+            sum += arr[i];
+        }
+        querySum.push(sum);
     }
 
-    let sumArray = [];
-    for (let [L, R] of queries) {
-        let querySum = PF[R] - PF[L] + arr[L]
-        sumArray.push(querySum)
-    }
-    return sumArray;
+    return querySum
 }
 
-console.log(getSum_L_R(arr, queries))
+console.log(getQuerySum(arr, queries));
 
-
-// PREFIX SUM technique is used here
