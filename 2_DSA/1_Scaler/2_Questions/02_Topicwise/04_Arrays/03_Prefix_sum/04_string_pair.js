@@ -6,16 +6,52 @@ How many pairs [i,j] exists such that
 
 let str = "acgdgag";
 
+/*
+            SOLUTION 3 : OPTIMISED
+*/
+
+function getPair(str) {
+    let count = 0;
+    let gCount = 0;
+
+    for (let i = str.length -1; i>=0; i--) {
+        if (str[i] == 'g') {
+            gCount++;
+        }
+        if (str[i] == 'a') {
+            count += gCount
+        }
+    }
+    return count;
+}
+
+console.log(getPair(str));
+
 
 /*
             SOLUTION 2 : OPTIMISED
 */
 
-function getPair(arr) {
+/*
+function getPair(str) {
+    let count = 0;
+    let aCount = 0;
 
+    for(let i = 0; i < str.length; i++) {
+        if (str[i] == "a") {
+            aCount++;
+            console.log("a:", i, aCount);
+        }
+        if (str[i] == "g") {
+            count+=aCount;
+            console.log("ag:", i, aCount, count);
+        }
+    }
+    return count;
 }
 
-console.log(getPair(arr));
+console.log(getPair(str));
+*/
 
 
 /*
