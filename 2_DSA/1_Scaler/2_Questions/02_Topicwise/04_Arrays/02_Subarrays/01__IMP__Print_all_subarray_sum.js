@@ -70,3 +70,24 @@ function printAllSubarraysSum3(arr) {
 }
 
 console.log(printAllSubarraysSum3(arr_3))
+
+
+
+// SOLUTION 4: Using BIGINT 
+
+module.exports = { 
+ //param A : array of integers
+ //return a long integers
+	subarraySum : function(A){
+        
+        let ans = BigInt(0);
+        for (let i = 0; i< A.length; i++) {
+            let val = BigInt(A[i]);
+            let left = BigInt(i+1);
+            let right = BigInt(A.length - i);
+            ans = ans + (val * left * right);
+        }
+        
+        return ans;
+	}
+};
