@@ -76,3 +76,20 @@ function getpair(str) {
 
 console.log(getpair(str));
 */
+
+
+function getPairCount(str){
+    let gCount = 0;
+    let pairCount = 0;
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        if (str[i] == "g") {
+            gCount++;
+        }
+        if (str[i] == "a") {
+            pairCount += gCount;
+        }
+    }
+
+    return pairCount;
+}
