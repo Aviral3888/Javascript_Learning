@@ -58,4 +58,29 @@ i   Sum of elements at lower indexes    Sum of elements at higher indexes
 Thus, there is no such index.
 */
 
-let A = [-7, 1, 5, 2, -4, 3, 0];
+let A = [1, 2, 3];
+// let A = [-7, 1, 5, 2, -4, 3, 0];
+
+function getEquilibrium(A) {
+    let totalSum = 0;
+    for (let i = 0; i < A.length; i++) {
+        totalSum += A[i]
+    };
+
+    let leftSum = 0;
+    let rightSum = 0;
+
+    for (let i = 0; i < A.length; i++) {
+        if (i != 0) {
+            leftSum += A[i-1];
+        }
+        rightSum = totalSum - leftSum - A[i];
+
+        if (leftSum === rightSum) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(getEquilibrium(A));
