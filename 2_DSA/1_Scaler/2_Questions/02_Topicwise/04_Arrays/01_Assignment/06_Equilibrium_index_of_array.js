@@ -58,29 +58,84 @@ i   Sum of elements at lower indexes    Sum of elements at higher indexes
 Thus, there is no such index.
 */
 
-let A = [1, 2, 3];
+// let A = [1, 2, 3];
 // let A = [-7, 1, 5, 2, -4, 3, 0];
 
-function getEquilibrium(A) {
-    let totalSum = 0;
-    for (let i = 0; i < A.length; i++) {
-        totalSum += A[i]
-    };
+// function getEquilibrium(A) {
+//     let totalSum = 0;
+//     for (let i = 0; i < A.length; i++) {
+//         totalSum += A[i]
+//     };
 
+//     let leftSum = 0;
+//     let rightSum = 0;
+
+//     for (let i = 0; i < A.length; i++) {
+//         if (i != 0) {
+//             leftSum += A[i-1];
+//         }
+//         rightSum = totalSum - leftSum - A[i];
+
+//         if (leftSum === rightSum) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
+// console.log(getEquilibrium(A));
+
+
+
+
+
+// SOLUTION - AGAIN 
+
+let A = [-7, 1, 5, 2, -4, 3, 0];
+function getEquilibriumIndex(arr) {
+
+    let N = arr.length;
+    let equilibriumIndexCount = 0;
+
+    // STEP 1: Calculate Total sum
+    let totalSum = 0;
+    for (let i = 0; i < N; i++) {
+        totalSum += arr[i];
+    }
+
+    // STEP 2: GET Left sum and Right Sum 
     let leftSum = 0;
     let rightSum = 0;
 
-    for (let i = 0; i < A.length; i++) {
-        if (i != 0) {
-            leftSum += A[i-1];
-        }
-        rightSum = totalSum - leftSum - A[i];
+    for (let i = 0; i < N; i++) {
+
+        // Get Left Sum using Carry Forward Technique 
+        leftSum += arr[i];
+
+        // Get Right Sum from Left Sum 
+        rightSum = totalSum + arr[i] - leftSum;
+        /*
+        LOGIC:
+        at any Index i
+        Left Sum = [0, i-1]
+        Right Sum = [i+1, N-1]
+        Total Sum = arr[0, N-1]
+
+        [0, N-1] = [0, i-1] + [i+1, N-1] + arr[i]
+        Adding arr[i] on both sides
+        [0, N-1] + arr[i] = [0, i-1] + [i+1, N-1] + arr[i] + arr[i]
+        [0, N-1] + arr[i] = [0, i-1] + arr[i] + [i+1, N-1] + arr[i]
+        [0, N-1] + arr[i] = [0, i] + [i, N-1]
+        TS + arr[i] = LS + RS
+        => RS = TS + arr[i] - LS
+        */
 
         if (leftSum === rightSum) {
-            return i;
+            equilibriumIndexCount++;
         }
     }
-    return -1;
+    
+    return equilibriumIndexCount;
 }
 
-console.log(getEquilibrium(A));
+console.log(getEquilibriumIndex(A));
