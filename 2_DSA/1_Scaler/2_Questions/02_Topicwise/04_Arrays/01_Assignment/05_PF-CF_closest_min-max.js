@@ -103,38 +103,78 @@ Take the last 3 elements of the array.
 
 // ---------- SOLUTION 2 - Brute Force
 
-let A = [2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1];
+// let A = [2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1];
+let A = [834, 563, 606, 221, 165];
+
+
+// function getClosestMinMax(A) {
+
+//     let N = A.length;
+
+//     let min = Infinity;
+//     let max = -Infinity;
+//     for (let i = 0; i < N; i++) {
+//         min = Math.min(min, A[i]);
+//         max = Math.max(max, A[i]);
+//     }
+
+//     if (min == max) { return 1 };
+
+//     let ans = N - 1;
+//     for (let i = 0; i < N; i++) {
+//         if (A[i] == min) {
+//             for (let j = i + 1; j < N; j++) {
+//                 if (A[j] == max) {
+//                     console.log(i, j)
+//                     ans = Math.min(ans, (j - i + 1));
+//                 }
+//             }
+//         }
+//         else if (A[i] == max) {
+//             for (let j = i + 1; j < N; j++) {
+//                 if (A[j] == min) {
+//                     console.log(i, j)
+//                     ans = Math.min(ans, (j - i + 1));
+//                 }
+//             }
+//         }
+//     }
+//     return ans;
+// }
+
+// console.log(getClosestMinMax(A));
+
+
+// ----- SOLUTION 3 - OPTimized and Simple
+
 
 function getClosestMinMax(A) {
-
     let N = A.length;
-
     let min = Infinity;
     let max = -Infinity;
+
     for (let i = 0; i < N; i++) {
         min = Math.min(min, A[i]);
         max = Math.max(max, A[i]);
     }
-    
-    let ans = N - 1;
-    for (let i = 0; i < N; i++) {
-        if (A[i] == min) {
-            for (let j = i + 1; j < N; j++) {
-                if (A[j] == max) {
-                    console.log(i, j)
-                    ans = Math.min(ans, (j - i + 1));
-                }
-            }
+
+    if (min == max) { return 1 };
+
+    let ans = N;
+    let min_index = 2 * N;
+    let max_index = 2 * N;
+
+    for (let i = N - 1; i >= 0; i--) {
+        if (A[i] == max) {
+            ans = Math.min(ans, min_index - i + 1);
+            max_index = i;
         }
-        else if (A[i] == max) {
-            for (let j = i + 1; j < N; j++) {
-                if (A[j] == min) {
-                    console.log(i, j)
-                    ans = Math.min(ans, (j - i + 1));
-                }
-            }
+        else if (A[i] == min) {
+            ans = Math.min(ans, max_index - i + 1);
+            min_index = i;
         }
     }
+
     return ans;
 }
 
