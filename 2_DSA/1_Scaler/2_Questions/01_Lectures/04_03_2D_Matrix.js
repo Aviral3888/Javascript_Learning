@@ -64,7 +64,7 @@ for (let i = 0; i < M; i++) {
 
 
 
-// Add 2 Matrices
+// Problem 4 - Add 2 Matrices
 
 let mat1 = [
     [2, 5, -1],
@@ -79,7 +79,7 @@ let mat2 = [
     [5, 0, -6],
     [-3, 7, 9, 4]
 ];
-
+/**/
 function isValidMatrix(mat) {
     if (!Array.isArray(mat) || mat.length == 0) { return false }
     let cols = mat[0].length;
@@ -117,4 +117,56 @@ function addMatrices(mat1, mat2) {
     return mat3;
 }
 
-console.log(addMatrices(mat1, mat2));
+// console.log(addMatrices(mat1, mat2));
+
+
+
+
+// Problem 5 - Print Diagonal
+
+let mat3 = [
+    [2, 5, -1],
+    [7, 0, 3],
+    [-4, 6, 8]
+];
+
+function printDiagonal(mat) {
+    if (!Array.isArray(mat) || mat.length == 0) {
+        return 0;
+    }
+
+    let row = mat.length;
+    let col = mat[0].length;
+
+    if (row !== col) {
+        return 0
+    }
+
+    for (let i = 0; i < row; i++) {
+        console.log("L-R:", mat[i][i]);
+    }
+
+    /*
+    let j = row - 1;
+    for (let i = 0; i < row; i++) {
+        
+        console.log("R-L:", mat[i][j]);
+        j--;
+    }
+    */
+
+    /* 
+    Can also be done using Single variable, i.e. only i;
+    so basically, 
+    i + j = N - 1;
+    j = N - 1 - i;
+    */
+    for (let i = 0; i < row; i++) {
+        console.log(mat[i][row - 1 - i]);
+    }
+
+
+    return true
+}
+
+console.log(printDiagonal(mat3));
