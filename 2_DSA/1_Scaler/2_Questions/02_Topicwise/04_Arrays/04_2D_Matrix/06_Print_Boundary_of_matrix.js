@@ -31,6 +31,63 @@ function printBoundary(mat) {
     // Print Boundary
     let boundaryArray = [];
 
+    // i = 0; j = 0 
+    let i = 0; j = 0;
+    
+    for (j = 0; j < M - 1; j++) {
+        boundaryArray.push(mat[i][j]);
+    }
+
+    // i = 0; j = M-1;
+    for (i = 0; i < N - 1; i++) {
+        boundaryArray.push(mat[i][j]);
+    }
+
+    // i = N-1; j = M-1;
+    for (j = M - 1; j >= 1; j--) {
+        boundaryArray.push(mat[i][j]);
+    }
+
+    // i = N-1; j = 0
+    for (i = N - 1; i >= 1; i--) {
+        boundaryArray.push(mat[i][j]);
+    }
+
+    // i = 0; j= 0;
+
+    return boundaryArray;
+}
+
+console.log(printBoundary(mat));
+
+
+
+/*
+
+function printBoundary(mat) {
+
+    if (!Array.isArray(mat) || mat.length == 0) {
+        return -1;
+    }
+
+    let N = mat.length;
+    let M = mat[0].length;
+
+    for (let row of mat) {
+        console.log(JSON.stringify(row));  // For Verification
+        if (!Array.isArray(row) || row.length !== M) {
+            return -1
+        }
+    }
+
+    // In case matrix consists of only 1 row or 1 column print it as it is
+    if (N == 1 || M == 1) {
+        return mat
+    };
+
+    // Print Boundary
+    let boundaryArray = [];
+
     // Print: FIRST ROW :: i = 0; j = 0
     for (let j = 0; j < M - 1; j++) {
         boundaryArray.push(mat[0][j]);
@@ -54,6 +111,6 @@ function printBoundary(mat) {
     // i = 0; j = 0 
 
     return boundaryArray;
-}
 
-console.log(printBoundary(mat));
+
+*/
