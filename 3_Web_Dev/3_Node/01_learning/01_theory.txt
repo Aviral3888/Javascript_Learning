@@ -1,0 +1,7 @@
+Node js (Javascript)
+
+2 major comp 
+- v8 engine (executes Js, built in C++)
+- libUV (library, implementation of event loop and thread pool concept)
+
+With these 2 major comp, node js is built, working on nodejs. 
