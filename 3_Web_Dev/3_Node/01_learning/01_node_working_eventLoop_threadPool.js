@@ -4,16 +4,16 @@ const fs = require('fs');
 const crypto = require('crypto');
 const start = Date.now();
 
-process.env.UV_THREADPOOL_SIZE = 1;
+process.env.UV_THREADPOOL_SIZE = 4;
 
-console.log("1 Node process init");
+// console.log("1 Node process init");
 
 setTimeout(() => {
-    console.log("3 hello from setTimeout 1");
+    // console.log("3 hello from setTimeout 1");
 }, 0);
 
 setImmediate(() => {
-    console.log("4 hello from setImmediate Fn 1");
+    // console.log("4 hello from setImmediate Fn 1");
 })
 
 fs.readFile('./01_theory.txt', 'utf-8', (txt) => {
@@ -28,20 +28,12 @@ fs.readFile('./01_theory.txt', 'utf-8', (txt) => {
         console.log(`${Date.now() - start}ms`, "Password 1 hashing done:", val);
     });
 
-    crypto.pbkdf2('password2', 'salt1', 100000, 1024, 'sha512', (val) => {
-        console.log(`${Date.now() - start}ms`, "Password 2 hashing done:", val);
-    });
+    // crypto.pbkdf2('password2', 'salt1', 100000, 1024, 'sha512', (val) => {
+    //     console.log(`${Date.now() - start}ms`, "Password 2 hashing done:", val);
+    // });
 
     // crypto.pbkdf2('password3', 'salt1', 100000, 1024, 'sha512', (val) => {
     //     console.log(`${Date.now() - start}ms`, "Password 3 hashing done:", val);
-    // });
-
-    // crypto.pbkdf2('password4', 'salt1', 100000, 1024, 'sha512', (val) => {
-    //     console.log(`${Date.now() - start}ms`, "Password 4 hashing done:", val);
-    // });
-
-    // crypto.pbkdf2('password5', 'salt1', 100000, 1024, 'sha512', (val) => {
-    //     console.log(`${Date.now() - start}ms`, "Password 5 hashing done:", val);
     // });
 })
 
@@ -57,22 +49,14 @@ fs.readFile('./01_theory.txt', 'utf-8', (txt) => {
         console.log(`${Date.now() - start}ms`, "Password 1 hashing done:", val);
     });
 
-    crypto.pbkdf2('password2', 'salt1', 100000, 1024, 'sha512', (val) => {
-        console.log(`${Date.now() - start}ms`, "Password 2 hashing done:", val);
-    });
+    // crypto.pbkdf2('password2', 'salt1', 100000, 1024, 'sha512', (val) => {
+    //     console.log(`${Date.now() - start}ms`, "Password 2 hashing done:", val);
+    // });
 
     // crypto.pbkdf2('password3', 'salt1', 100000, 1024, 'sha512', (val) => {
     //     console.log(`${Date.now() - start}ms`, "Password 3 hashing done:", val);
     // });
-
-    // crypto.pbkdf2('password4', 'salt1', 100000, 1024, 'sha512', (val) => {
-    //     console.log(`${Date.now() - start}ms`, "Password 4 hashing done:", val);
-    // });
-
-    // crypto.pbkdf2('password5', 'salt1', 100000, 1024, 'sha512', (val) => {
-    //     console.log(`${Date.now() - start}ms`, "Password 5 hashing done:", val);
-    // });
 })
 
-console.log("2 hello from top level code");
+// console.log("2 hello from top level code");
 
